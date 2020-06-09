@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive Own GetElementByTagName fucntion</title>
+</head>
+<body>
+    <h1>Heading with a <span>span</span> element.</h1>
+<p>A paragraph with <span>one</span>, <span>two</span>
+  spans.</p>
+<div class="nested-tags">
+    <H1><span>Hey, u r my grandpa, count me 😯</span></H1>
+</div>
+<script>
+    var tags = [];
+    function byTagName(node, tagName){
+    node.childNodes.forEach(child =>{
+       search(child, tagName)
+    });
+    return tags;
+   }
+   function search(child, tagName){
+    if(child.nodeName.toLowerCase() === tagName){
+        console.log(child.nodeName)
+        tags.push(child);
+    } 
+    if(child.childNodes.length > 0) {
+        child.childNodes.forEach(nestedChild =>{
+            console.log(nestedChild.nodeName)
+            search(nestedChild, tagName);
+        })
+     }
+   }
+  console.log(byTagName(document.body, "span").length);
+</script>    
+</body>
+</html>
