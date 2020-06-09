@@ -7,8 +7,8 @@
 </head>
 <body>
     <style>body { min-height: 200px }</style>
-<img src="img/cat.png" id="cat" style="position: absolute">
-<img src="img/hat.png" id="hat" style="position: absolute">
+<img src="assets/cat.png" id="cat" style="position: absolute">
+<img src="assets/hat.png" id="hat" style="position: absolute">
 
 <script>
     let cat = document.querySelector("#cat");
@@ -20,11 +20,11 @@
         if (lastTime != null) angle += (time - lastTime) * 0.001;
         
         lastTime = time;
-        cat.style.top = (-Math.sin(angle) * 40 + 40) + "px";
-        cat.style.left = (-Math.cos(angle) * 200 + 230) + "px";
+        cat.style.top = (-Math.sin(angle) * 40 + 180) + "px";
+        cat.style.left = (-Math.cos(angle) * 200 + 730) + "px";
         // Your extensions here.
-        hat.style.top = (-Math.sin(angle) * 40 + 10) + "px";
-        hat.style.left = (-Math.cos(angle) * 200 + 230) + "px";
+        hat.style.top = (-Math.sin(angle) * 40 + 150) + "px";
+        hat.style.left = (-Math.cos(angle) * 200 + 730) + "px";
         cat.style.zIndex = 999;
         requestAnimationFrame(animate);
   }
